@@ -1,6 +1,6 @@
 <ul class="medea-list">
   
-<% microposts.each do |micropost| %>
+<% @microposts.each do |micropost| %>
   <li class='media'>
     <div class='media-left'>
       <img class='media-object img-rounded' src='<%= gravatar_url(micropost.user,options = { size: 50})%>' alt="">
@@ -25,14 +25,12 @@
 
 <% end %>
 
-<div class='btn btn-primary btn-xs'><%= render 'likes/like_button',micropost: micropost %></div>
+<%= render 'likes/like_button',micropost: micropost %>
           
-
-
       </div>
     </div>
   </li>
   
 <% end %>
-<%= paginate microposts %>
+<%= paginate @microposts %>
  </ul>
